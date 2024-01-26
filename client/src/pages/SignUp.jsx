@@ -59,7 +59,7 @@ export default function SignUp() {
         className="text-3xl text-center font-semibold 
       my-7"
       >
-        Signup
+        Sign up
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
