@@ -43,8 +43,7 @@ export default function Search(){
                         <div className='flex gap-2'>
                             <input type='checkbox' id='Finished' className='w-5' />
                             <span>Finished</span>
-                        </div>                   
-                        
+                        </div>                      
                     </div>
                     <div className='flex items-center gap-2'>
                         <label className='font-semibold'>Sort:</label>
@@ -55,7 +54,7 @@ export default function Search(){
                             <option>Oldest</option>
                         </select>
                     </div>
-                    <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>SEARCH</button>
+                    <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'> SEARCH </button>
                 </form>
             </div>
             <div className="">
