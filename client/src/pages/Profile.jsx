@@ -1,6 +1,8 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
+import {Link} from 'react-router-dom';
+
 export default function Profile() {
 
   const currentUser = useSelector(state => state.user.currentUser);
@@ -13,11 +15,15 @@ export default function Profile() {
       {currentUser && (
       <img src={currentUser.avatar} alt="profile" className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2' />
       )}
-      
+
       <input type="text" placeholder="username" id="username" className="border p-3 rounded-lg"/>
       <input type="email" placeholder="email" id="email" className="border p-3 rounded-lg"/>
       <input type="text" placeholder="password" id="password" className="border p-3 rounded-lg"/>
       <button className="big-slate-700 text-white rounded-full p-3 uppercase hover:opacity-95 disabled:opacity-80">update</button>
+      <Link className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95" to={"/create-listing"}>
+      Create Listing
+
+      </Link>
       
       </form>
       <div className="flex justify-between mt-5">
