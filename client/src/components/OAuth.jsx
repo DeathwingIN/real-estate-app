@@ -7,13 +7,18 @@ import { useNavigate } from 'react-router-dom';
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // Handle Google Sign-In button click
   const handleGoogleClick = async () => {
     try {
+      // Initialize Google Auth provider and Firebase Auth
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
 
+      // Sign in with Google using a popup
       const result = await signInWithPopup(auth, provider);
 
+      // Send the user data to the backend for authentication
       const res = await fetch('/api/auth/google', {
         method: 'POST',
         headers: {
@@ -25,20 +30,27 @@ export default function OAuth() {
           photo: result.user.photoURL,
         }),
       });
+
+      // Get the response data
       const data = await res.json();
+
+      // Dispatch the signInSuccess action to update the Redux store
       dispatch(signInSuccess(data));
+
+      // Navigate to the home page
       navigate('/');
     } catch (error) {
-      console.log('could not sign in with google', error);
+      console.log('Could not sign in with Google', error);
     }
   };
+
   return (
-    <button
-      onClick={handleGoogleClick}
-      type='button'
-      className='bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-95'
-    >
-      Continue with google
-    </button>
+      <button
+          onClick={handleGoogleClick}
+          type='button'
+          className='bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-95'
+      >
+        Continue with Google
+      </button>
   );
 }
