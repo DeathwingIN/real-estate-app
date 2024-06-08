@@ -11,7 +11,7 @@ import CreateListing from "./pages/CreateListing";
 import PrivateRoute from "./components/PrivateRoute";
 
 export default function App() {
-  return <BrowserRouter>
+  return ( <BrowserRouter>
   <Header/>
   <Routes>
   <Route path="/" element={<Home/>}/>
@@ -25,4 +25,5 @@ export default function App() {
   </Route>
   </Routes>
   </BrowserRouter>
+  );
 }
