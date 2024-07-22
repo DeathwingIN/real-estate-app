@@ -10,7 +10,7 @@ Real State app is a user-friendly multifunctional application where users can se
 
 ## Developers
 
-- 19APC
+- 19APC4090 - Disini Chathumika Samaraweera
 - 19APC3979 - Imesh Jayakody
 - 19APC4360 - Gayani Jayasundara
 
